@@ -1,53 +1,56 @@
 import React from 'react';
-import classNames from 'classnames';
-import './button.css';
+import { KayaButton } from './styled';
+import { IButtonProps } from './types';
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  type?: 'primary' | 'secondary';
-  /**
-   * What background color to use
-   */
-  textColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
-
-/**
- * Primary UI component for user interaction
- */
-const Button = ({
-  type = 'primary',
-  textColor,
-  size = 'medium',
+const Button: React.FC<IButtonProps> = ({
+  children,
+  type,
+  role,
+  icon,
+  size = 'small',
+  htmlType = 'button',
+  loading = false,
   onClick,
-  label,
-}: ButtonProps) => {
+  disabled = false,
+  block = false,
+  danger = false,
+  href,
+  target,
+}) => {
   return (
-    <button
-      type='button'
-      className={classNames(
-        'storybook-button',
-        `storybook-button--${size}`,
-        `storybook-button--${type}`
+    <>
+      {role ? (
+        <KayaButton
+          loading={loading}
+          htmlType={htmlType}
+          size={size}
+          role={role}
+          icon={icon}
+          disabled={disabled}
+          block={block}
+          danger={danger}
+          href={href}
+          target={target}
+        >
+          {children}
+        </KayaButton>
+      ) : (
+        <KayaButton
+          loading={loading}
+          htmlType={htmlType}
+          size={size}
+          type={type}
+          icon={icon}
+          disabled={disabled}
+          block={block}
+          danger={danger}
+          href={href}
+          target={target}
+        >
+          {children}
+        </KayaButton>
       )}
-      style={textColor ? { color: textColor } : {}}
-      onClick={onClick}
-    >
-      {label}
-    </button>
+    </>
   );
 };
 

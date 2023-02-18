@@ -23,8 +23,8 @@
     "typescript"
   ],
   "author": "Kaya",
-  "license": "MIT",
   "devDependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@babel/core": "^7.12.9",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
@@ -51,6 +51,13 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "classnames": "^2.3.2"
+    "@types/antd": "^1.0.0",
+    "@types/styled-components": "^5.1.26",
+    "antd": "^5.2.1",
+    "classnames": "^2.3.2",
+    "styled-components": "^5.3.6"
+  },
+  "resolutions": {
+    "@types/antd": "^1.0.0"
   }
 }
