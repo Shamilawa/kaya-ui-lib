@@ -1,6 +1,6 @@
 {
   "name": "kaya-design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ui component library for KAYA",
   "main": "index.js",
   "license": "MIT",
