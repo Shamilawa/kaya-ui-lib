@@ -1,56 +1,24 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
+import { ButtonProps } from 'antd';
+import { IButtonAdditionalProps } from './types';
 import { KayaButton } from './styled';
-import { IButtonProps } from './types';
+
+type IButtonProps = IButtonAdditionalProps &
+  ButtonProps &
+  ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<IButtonProps> = ({
-  children,
-  type,
-  role,
+  variant = 'default',
+  onClick,
   icon,
   size = 'small',
-  htmlType = 'button',
-  loading = false,
-  onClick,
-  disabled = false,
-  block = false,
-  danger = false,
-  href,
-  target,
+  ...rest
 }) => {
   return (
-    <>
-      {role ? (
-        <KayaButton
-          loading={loading}
-          htmlType={htmlType}
-          size={size}
-          role={role}
-          icon={icon}
-          disabled={disabled}
-          block={block}
-          danger={danger}
-          href={href}
-          target={target}
-        >
-          {children}
-        </KayaButton>
-      ) : (
-        <KayaButton
-          loading={loading}
-          htmlType={htmlType}
-          size={size}
-          type={type}
-          icon={icon}
-          disabled={disabled}
-          block={block}
-          danger={danger}
-          href={href}
-          target={target}
-        >
-          {children}
-        </KayaButton>
-      )}
-    </>
+    <KayaButton size={size} variant={variant} onClick={onClick} {...rest}>
+      {rest.children}
+      {icon}
+    </KayaButton>
   );
 };
 
