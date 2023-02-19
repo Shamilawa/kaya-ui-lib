@@ -1,25 +1,15 @@
-export interface IButtonProps {
-  children?: React.ReactNode;
-  type?: IButtonTypes;
-  role?: 'freelancer' | 'employer';
-  htmlType?: 'button' | 'submit' | 'reset' | undefined;
-  icon?: React.ReactNode;
-  loading?: boolean;
-  // shape?: 'default' | 'circle' | 'round' | undefined;
-  size?: 'small' | 'middle' | 'large' | undefined;
-  onClick?: (event: MouseEvent) => void | undefined;
-  disabled?: boolean;
-  block?: boolean;
-  danger?: boolean;
-  href?: string;
-  target?: string;
+export interface IButtonAdditionalProps {
+  variant?: IButtonVariant;
 }
 
 // Button Types
-export type IButtonTypes =
+export type IButtonVariant =
   | 'default'
   | 'primary'
+  | 'employer'
+  | 'freelancer'
   | 'ghost'
   | 'dashed'
   | 'link'
-  | 'text';
+  | 'text'
+  | undefined;

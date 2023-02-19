@@ -1,6 +1,6 @@
 {
   "name": "kayaui-new",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Ui component library for KAYA",
   "main": "index.js",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-controls": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/addon-postcss": "^2.0.0",
