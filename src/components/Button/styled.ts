@@ -112,7 +112,7 @@ export const KayaButton = styled(Button)<{
   /* this will control button sizes */
   ${(props) => buttonSizeStyles(props.size || 'sm')}
  
-  /* boder radius for different button sizes */
+  /* boder radius for different button sizes. default will be border radius 0 */
   border-radius: ${(props) =>
     props.shape === 'circle'
       ? '50% !important'
