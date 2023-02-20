@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import { Button } from 'antd';
-import { IButtonTypes } from './types';
+import { IButtonVariant } from './types';
 
 // Generate different Button Types
 // generating styles for different buttons
-const buttonTypeStyles = (type: string) => {
-  switch (type) {
+const buttonTypeStyles = (variant: IButtonVariant) => {
+  switch (variant) {
     // Default button
     case 'default':
       return css`
@@ -99,16 +99,15 @@ const buttonSizeStyles = (size: string) => {
 };
 
 export const KayaButton = styled(Button)<{
-  type?: IButtonTypes;
-  role?: string;
+  variant?: IButtonVariant;
   size?: string;
 }>`
   /* common styles for all button types and default buttons */
   border-radius: 0 !important;
-  height: auto !important;
+  height: 44px !important;
 
   /* this wil control button variants */
-  ${(props) => buttonTypeStyles(props.type || props.role || 'default')}
+  ${(props) => buttonTypeStyles(props.variant || 'default')}
 
   /* this will control button sizes */
   ${(props) => buttonSizeStyles(props.size || 'sm')}
