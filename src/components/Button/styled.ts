@@ -101,9 +101,9 @@ const buttonSizeStyles = (size: string) => {
 export const KayaButton = styled(Button)<{
   variant?: IButtonVariant;
   size?: string;
+  shape?: string;
 }>`
   /* common styles for all button types and default buttons */
-  border-radius: 0 !important;
   height: 44px !important;
 
   /* this wil control button variants */
@@ -111,4 +111,12 @@ export const KayaButton = styled(Button)<{
 
   /* this will control button sizes */
   ${(props) => buttonSizeStyles(props.size || 'sm')}
+ 
+  /* boder radius for different button sizes. default will be border radius 0 */
+  border-radius: ${(props) =>
+    props.shape === 'circle'
+      ? '50% !important'
+      : props.shape === 'round'
+      ? '40px !important'
+      : '0 !important'}
 `;

@@ -1,43 +1,19 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Button from './Button';
+import { argTypes } from './argTypes';
 import { RightOutlined } from '@ant-design/icons';
 
 export default {
   title: 'Components/Button',
   component: Button,
-  argTypes: {
-    onClick: { action: 'clicked' },
-    variant: {
-      control: {
-        type: 'radio',
-        options: ['default', 'primary', 'freelancer', 'employer'],
-      },
-      order: 1,
-    },
-    shape: {
-      control: {
-        type: 'radio',
-        options: ['default', 'circle', 'round'],
-      },
-      description: 'Can be set button shape',
-      defaultValue: 'default',
-    },
-    size: {
-      control: {
-        type: 'radio',
-        options: ['small', 'middle', 'large'],
-      },
-      defaultValue: 'small',
-    },
-    disabled: { control: 'boolean' },
-    loading: { control: 'boolean' },
-  },
+  argTypes,
 } as ComponentMeta<typeof Button>;
 
 // Create a master template for mapping args to render the Button component
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+// Button Variations
 // Reuse that template for creating Default Button
 export const Default = Template.bind({});
 Default.args = {

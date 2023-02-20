@@ -12,10 +12,17 @@ const Button: React.FC<IButtonProps> = ({
   onClick,
   icon,
   size = 'small',
+  shape = 'default',
   ...rest
 }) => {
   return (
-    <KayaButton size={size} variant={variant} onClick={onClick} {...rest}>
+    <KayaButton
+      size={size}
+      variant={variant}
+      shape={shape}
+      onClick={onClick}
+      {...rest}
+    >
       {rest.children}
       {icon}
     </KayaButton>
