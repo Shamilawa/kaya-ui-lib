@@ -27,9 +27,6 @@ export const argTypes = {
         summary: "'default' | 'circle' | 'round'",
       },
     },
-    defaultValue: {
-      summary: "'default'",
-    },
   },
   size: {
     control: {
@@ -42,9 +39,6 @@ export const argTypes = {
         summary: "'small' | 'middle' | 'large'",
       },
     },
-    defaultValue: {
-      summary: "'small'",
-    },
   },
   disabled: {
     control: 'boolean',
@@ -53,9 +47,6 @@ export const argTypes = {
       type: {
         summary: 'boolean',
         detail: undefined,
-      },
-      defaultValue: {
-        summary: 'false',
       },
     },
   },
@@ -66,9 +57,6 @@ export const argTypes = {
       type: {
         summary: 'boolean',
         detail: undefined,
-      },
-      defaultValue: {
-        summary: 'false',
       },
     },
   },
