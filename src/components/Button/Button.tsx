@@ -3,6 +3,9 @@ import { ButtonProps } from 'antd';
 import { IButtonAdditionalProps } from './types';
 import { KayaButton } from './styled';
 
+// type definitions for button - including default
+// HTML button attributes, antd button attributes
+// with some custon button attributes called IButtonAdditionalProps
 type IButtonProps = IButtonAdditionalProps &
   ButtonProps &
   ButtonHTMLAttributes<HTMLButtonElement>;
